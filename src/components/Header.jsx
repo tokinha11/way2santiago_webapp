@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const isHomePage = location.pathname === '/';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -13,38 +17,44 @@ function Header() {
     }, []);
 
     const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setIsMobileMenuOpen(false);
+        if (!isHomePage) {
+            // Si no estamos en la página principal, navegar y luego scroll
+            navigate('/');
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
+        setIsMobileMenuOpen(false);
     };
 
     return (
         <>
             <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
                 <div className="container">
-                    <div className="logo">
+                    <Link to="/" className="logo">
                         <span className="logo-icon">🎒</span>
                         <span>Way2Santiago</span>
-                    </div>
+                    </Link>
 
                     <nav>
                         <ul className="nav-links">
                             <li><a href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>Inicio</a></li>
                             <li><a href="#nosotros" onClick={(e) => { e.preventDefault(); scrollToSection('nosotros'); }}>Nosotros</a></li>
                             <li><a href="#servicios" onClick={(e) => { e.preventDefault(); scrollToSection('servicios'); }}>Servicios</a></li>
-                            <li><a href="#solicitar" onClick={(e) => { e.preventDefault(); scrollToSection('solicitar'); }}>Solicitar</a></li>
                         </ul>
                     </nav>
 
-                    <a
-                        href="#solicitar"
-                        className="btn btn-primary header-cta"
-                        onClick={(e) => { e.preventDefault(); scrollToSection('solicitar'); }}
-                    >
+                    <Link to="/solicitar" className="btn btn-primary header-cta">
                         Solicitar Servicio
-                    </a>
+                    </Link>
 
                     <button
                         className="mobile-menu-btn"
@@ -63,7 +73,7 @@ function Header() {
                     <li><a href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>Inicio</a></li>
                     <li><a href="#nosotros" onClick={(e) => { e.preventDefault(); scrollToSection('nosotros'); }}>Nosotros</a></li>
                     <li><a href="#servicios" onClick={(e) => { e.preventDefault(); scrollToSection('servicios'); }}>Servicios</a></li>
-                    <li><a href="#solicitar" onClick={(e) => { e.preventDefault(); scrollToSection('solicitar'); }}>Solicitar Servicio</a></li>
+                    <li><Link to="/solicitar" onClick={() => setIsMobileMenuOpen(false)}>Solicitar Servicio</Link></li>
                 </ul>
             </div>
         </>

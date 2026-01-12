@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Hero() {
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
@@ -24,12 +26,9 @@ function Hero() {
                     </p>
 
                     <div className="hero-buttons">
-                        <button
-                            className="btn btn-primary btn-large"
-                            onClick={() => scrollToSection('solicitar')}
-                        >
+                        <Link to="/solicitar" className="btn btn-primary btn-large">
                             Solicitar Transporte
-                        </button>
+                        </Link>
                         <button
                             className="btn btn-secondary btn-large"
                             onClick={() => scrollToSection('servicios')}

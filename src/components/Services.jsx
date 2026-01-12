@@ -3,45 +3,24 @@ function Services() {
         {
             icon: '🎒',
             title: 'Transporte de Mochilas',
-            description: 'Ideal para senderistas y peregrinos. Recogemos tu mochila en tu alojamiento y la llevamos al siguiente punto.',
+            description: 'De alojamiento en alojamiento a lo largo de las etapas del Camino de Santiago.',
             price: 'Desde 8€',
             unit: 'por etapa'
         },
         {
             icon: '🧳',
             title: 'Transporte de Maletas',
-            description: 'Servicio puerta a puerta para tus maletas. Perfecto para viajes en tren, avión o autobús.',
+            description: 'Desde aeropuertos hasta alojamientos en el Camino de Santiago o si lo prefieres de etapa en etapa.',
             price: 'Desde 15€',
             unit: 'por envío'
         },
         {
-            icon: '📦',
-            title: 'Paquetes y Bultos',
-            description: 'Transportamos paquetes de cualquier tamaño. Recogida y entrega en la dirección que indiques.',
-            price: 'Desde 12€',
-            unit: 'por paquete'
-        },
-        {
-            icon: '🚐',
-            title: 'Servicio Express',
-            description: 'Entrega urgente en el mismo día. Para cuando necesitas que tu equipaje llegue rápido.',
+            icon: '🚲',
+            title: 'Transporte de bicicletas',
+            description: 'Servicio de transporte de bicicletas. Perfecto para viajes en tren, avión o autobús.',
             price: 'Desde 25€',
             unit: 'por envío'
         },
-        {
-            icon: '🗺️',
-            title: 'Rutas del Camino',
-            description: 'Especializados en el Camino de Santiago. Conocemos todas las rutas y alojamientos.',
-            price: 'Desde 6€',
-            unit: 'por etapa'
-        },
-        {
-            icon: '📱',
-            title: 'Seguimiento GPS',
-            description: 'Rastrea tu equipaje en tiempo real desde nuestra app. Tranquilidad total durante el viaje.',
-            price: 'Incluido',
-            unit: 'gratis'
-        }
     ];
 
     return (

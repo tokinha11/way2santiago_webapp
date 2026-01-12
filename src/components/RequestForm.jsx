@@ -1,4 +1,15 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+// Genera un código de seguimiento de 16 dígitos
+function generateTrackingCode() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    for (let i = 0; i < 16; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code;
+}
 
 function RequestForm() {
     const [formData, setFormData] = useState({
@@ -15,6 +26,7 @@ function RequestForm() {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [trackingCode, setTrackingCode] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,10 +40,31 @@ function RequestForm() {
         e.preventDefault();
         setIsSubmitting(true);
 
+        // Generar código de seguimiento
+        const code = generateTrackingCode();
+
         // Simulamos el envío del formulario
         setTimeout(() => {
+            setTrackingCode(code);
             setIsSubmitting(false);
             setIsSubmitted(true);
+
+            // Guardar solicitud en localStorage (simulación de base de datos)
+            const solicitudes = JSON.parse(localStorage.getItem('solicitudes') || '[]');
+            solicitudes.push({
+                codigo: code,
+                nombre: formData.nombre,
+                email: formData.email,
+                telefono: formData.telefono,
+                tipoServicio: formData.tipoServicio,
+                direccionRecogida: formData.direccionRecogida,
+                direccionEntrega: formData.direccionEntrega,
+                fechaRecogida: formData.fechaRecogida,
+                numeroArticulos: formData.numeroArticulos,
+                estado: 'pendiente',
+                fechaCreacion: new Date().toISOString()
+            });
+            localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
         }, 1500);
     };
 
@@ -48,11 +81,12 @@ function RequestForm() {
             instrucciones: ''
         });
         setIsSubmitted(false);
+        setTrackingCode('');
     };
 
     if (isSubmitted) {
         return (
-            <section className="request-form-section section" id="solicitar">
+            <section className="request-form-section section" id="solicitar" style={{ paddingTop: '120px' }}>
                 <div className="container">
                     <div className="form-container">
                         <div className="form-success">
@@ -60,11 +94,23 @@ function RequestForm() {
                             <h3>¡Solicitud Enviada!</h3>
                             <p>
                                 Hemos recibido tu solicitud correctamente. Nos pondremos en contacto
-                                contigo en las próximas 24 horas para confirmar los detalles del servicio.
+                                contigo en las próximas horas para confirmar los detalles del servicio.
                             </p>
-                            <button className="btn btn-primary" onClick={handleReset} style={{ marginTop: '1.5rem' }}>
-                                Enviar Otra Solicitud
-                            </button>
+                            <div className="tracking-code-display">
+                                <p><strong>Tu código de seguimiento:</strong></p>
+                                <div className="tracking-code">{trackingCode}</div>
+                                <p className="tracking-note">
+                                    Guarda este código para consultar el estado de tu solicitud
+                                </p>
+                            </div>
+                            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                                <Link to="/seguimiento" className="btn btn-primary">
+                                    Consultar Estado
+                                </Link>
+                                <button className="btn btn-secondary" onClick={handleReset}>
+                                    Nueva Solicitud
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,7 +119,7 @@ function RequestForm() {
     }
 
     return (
-        <section className="request-form-section section" id="solicitar">
+        <section className="request-form-section section" id="solicitar" style={{ paddingTop: '120px' }}>
             <div className="container">
                 <div className="section-title">
                     <h2>Solicitar Transporte</h2>
@@ -148,9 +194,7 @@ function RequestForm() {
                                         <option value="">Selecciona un servicio</option>
                                         <option value="mochila">Transporte de Mochilas</option>
                                         <option value="maleta">Transporte de Maletas</option>
-                                        <option value="paquete">Paquetes y Bultos</option>
-                                        <option value="express">Servicio Express</option>
-                                        <option value="camino">Rutas del Camino</option>
+                                        <option value="bicicleta">Transporte de bicicletas</option>
                                     </select>
                                 </div>
                             </div>

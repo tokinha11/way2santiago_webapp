@@ -1,23 +1,18 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import RequestForm from './components/RequestForm'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import FormPage from './pages/FormPage'
+import TrackingPage from './pages/TrackingPage'
 import './App.css'
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <RequestForm />
-      </main>
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/solicitar" element={<FormPage />} />
+        <Route path="/seguimiento" element={<TrackingPage />} />
+      </Routes>
+    </Router>
   )
 }
 

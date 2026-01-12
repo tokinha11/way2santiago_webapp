@@ -66,7 +66,7 @@ function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© {currentYear} TransEquipaje. Todos los derechos reservados.</p>
+                    <p>© {currentYear} Way2Santiago. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
