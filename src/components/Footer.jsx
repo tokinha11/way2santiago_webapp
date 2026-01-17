@@ -10,18 +10,30 @@ function Footer() {
                 <div className="footer-grid">
                     <div className="footer-brand">
                         <div className="logo">
-                            <span className="logo-icon">🎒</span>
+                            <span className="logo-icon">
+                                <img src="/logo.png" alt="Logo" />
+                            </span>
                             <span>Way2Santiago</span>
                         </div>
                         <p>
                             Tu socio de confianza para el transporte de mochilas.
-                            Viaja ligero, nosotros nos encargamos del resto.
+                        </p>
+                        <p>
+                            No Backpack, No Problem!
                         </p>
                         <div className="social-links">
-                            <a href="#" className="social-link" aria-label="Facebook">📘</a>
-                            <a href="#" className="social-link" aria-label="Instagram">📷</a>
-                            <a href="#" className="social-link" aria-label="Twitter">🐦</a>
-                            <a href="#" className="social-link" aria-label="WhatsApp">💬</a>
+                            <a href="https://www.instagram.com/way2santiagoo/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+                                <img src="/instagram.png" alt="Instagram" />
+                            </a>
+                            <a href="https://www.tiktok.com/@way2santiago" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="TikTok">
+                                <img src="/tiktok.png" alt="TikTok" />
+                            </a>
+                            <a href="https://wa.me/0034634088757" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
+                                <img src="/whatsapp.png" alt="WhatsApp" />
+                            </a>
+                            <a href="mailto:waytosantiago@hotmail.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Email">
+                                <img src="/email.png" alt="Email" />
+                            </a>
                         </div>
                     </div>
 
@@ -41,7 +53,7 @@ function Footer() {
                         <ul className="footer-links contact-info">
                             <li>
                                 <span className="icon">📍</span>
-                                <span>Sarria, Lugo</span>
+                                <span>Rúa José Sánchez Arias, 2, 27600 Sarria, Lugo, España</span>
                             </li>
                             <li>
                                 <span className="icon">📞</span>
@@ -53,7 +65,7 @@ function Footer() {
                             </li>
                             <li>
                                 <span className="icon">🕐</span>
-                                <span>Lun - Sáb: 8:00 - 20:00</span>
+                                <span>Lun - Dom: 8:00 - 20:00</span>
                             </li>
                         </ul>
                     </div>

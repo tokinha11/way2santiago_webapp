@@ -13,16 +13,17 @@ function Hero() {
             <div className="container">
                 <div className="hero-content">
                     <div className="hero-badge">
-                        ⭐ Servicio de confianza
+                        ⭐ Servicio de Confianza
                     </div>
 
                     <h1>
-                        Transporte de Equipaje <span>Seguro y Rápido</span>
+                        Transporte de Mochilas <span>Seguro y Rápido</span>
                     </h1>
 
                     <p className="hero-description">
-                        Nos encargamos de transportar tu equipaje de forma segura y puntual.
-                        Viaja ligero mientras nosotros llevamos tus pertenencias a su destino.
+                        Somos una empresa joven y cercana, nacida con una idea clara: hacer que tu Camino de Santiago sea más cómodo y ligero.
+                        Con muchas ilusión y el corazón puesto en cada etapa, ofrecemos un servicio de transporte de mochilas entre alojamientos
+                        pensado para que solo te preocupes de disfrutar del Camino y vivir la experiencia al máximo.
                     </p>
 
                     <div className="hero-buttons">
@@ -39,10 +40,6 @@ function Hero() {
                     </div>
 
                     <div className="hero-stats">
-                        <div className="stat-item">
-                            <div className="stat-number">15K+</div>
-                            <div className="stat-label">Envíos Completados</div>
-                        </div>
                         <div className="stat-item">
                             <div className="stat-number">98%</div>
                             <div className="stat-label">Clientes Satisfechos</div>

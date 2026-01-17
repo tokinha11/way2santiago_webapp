@@ -9,11 +9,6 @@ function About() {
             icon: '⚡',
             title: 'Entrega Rápida',
             description: 'Cumplimos con los tiempos de entrega acordados.'
-        },
-        {
-            icon: '📍',
-            title: 'Seguimiento en Tiempo Real',
-            description: 'Rastrea tu equipaje en cualquier momento.'
         }
     ];
 
@@ -50,13 +45,13 @@ function About() {
                     <div className="about-image">
                         <div className="about-image-wrapper">
                             <img
-                                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"
+                                src="/catedral.jpg"
                                 alt="Transporte de equipaje"
                             />
                         </div>
                         <div className="experience-badge">
-                            <span className="years">14+</span>
-                            <span className="text">Años de Experiencia</span>
+                            <span className="years">5 ⭐</span>
+                            <span className="text">Valoracion de nuestros usuarios</span>
                         </div>
                     </div>
                 </div>
