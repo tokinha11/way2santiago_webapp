@@ -13,7 +13,7 @@ function Hero() {
             <div className="container">
                 <div className="hero-content">
                     <div className="hero-badge">
-                        ⭐ Servicio de confianza desde 2010
+                        ⭐ Servicio de confianza
                     </div>
 
                     <h1>

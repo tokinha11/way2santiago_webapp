@@ -8,7 +8,7 @@ function Footer() {
                     <div className="footer-brand">
                         <div className="logo">
                             <span className="logo-icon">🎒</span>
-                            <span>TransEquipaje</span>
+                            <span>Way2Santiago</span>
                         </div>
                         <p>
                             Tu socio de confianza para el transporte de equipaje.
