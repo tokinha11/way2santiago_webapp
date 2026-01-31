@@ -11,7 +11,7 @@ function Footer() {
                     <div className="footer-brand">
                         <div className="logo">
                             <span className="logo-icon">
-                                <img src="/logo.png" alt="Logo" />
+                                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" />
                             </span>
                             <span>Way2Santiago</span>
                         </div>
@@ -23,16 +23,16 @@ function Footer() {
                         </p>
                         <div className="social-links">
                             <a href="https://www.instagram.com/way2santiagoo/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
-                                <img src="/instagram.png" alt="Instagram" />
+                                <img src={`${import.meta.env.BASE_URL}instagram.png`} alt="Instagram" />
                             </a>
                             <a href="https://www.tiktok.com/@way2santiago" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="TikTok">
-                                <img src="/tiktok.png" alt="TikTok" />
+                                <img src={`${import.meta.env.BASE_URL}tiktok.png`} alt="TikTok" />
                             </a>
                             <a href="https://wa.me/0034634088757" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
-                                <img src="/whatsapp.png" alt="WhatsApp" />
+                                <img src={`${import.meta.env.BASE_URL}whatsapp.png`} alt="WhatsApp" />
                             </a>
                             <a href="mailto:waytosantiago@hotmail.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Email">
-                                <img src="/email.png" alt="Email" />
+                                <img src={`${import.meta.env.BASE_URL}email.png`} alt="Email" />
                             </a>
                         </div>
                     </div>

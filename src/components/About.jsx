@@ -45,7 +45,7 @@ function About() {
                     <div className="about-image">
                         <div className="about-image-wrapper">
                             <img
-                                src="/catedral.jpg"
+                                src={`${import.meta.env.BASE_URL}catedral.jpg`}
                                 alt="Transporte de equipaje"
                             />
                         </div>

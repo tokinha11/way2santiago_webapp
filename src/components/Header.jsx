@@ -41,7 +41,7 @@ function Header() {
                 <div className="container">
                     <Link to="/" className="logo">
                         <span className="logo-icon">
-                            <img src="/logo.png" alt="Logo" />
+                            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" />
                         </span>
                         <span>Way2Santiago</span>
                     </Link>
